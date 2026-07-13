@@ -14,11 +14,11 @@ from insights import generate_insights
 
 
 # =====================================================
-# Load CSS
+# Load Custom CSS
 # =====================================================
 
 def load_css():
-    with open("style.css") as css:
+    with open("style.css", encoding="utf-8") as css:
         st.markdown(
             f"<style>{css.read()}</style>",
             unsafe_allow_html=True
@@ -26,12 +26,12 @@ def load_css():
 
 
 # =====================================================
-# Page Config
+# Page Configuration
 # =====================================================
 
 st.set_page_config(
     page_title="AI Data Analyst Agent",
-    page_icon="📊",
+    page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -45,22 +45,24 @@ load_css()
 
 with st.sidebar:
 
-    st.title("AI Data Analyst")
+    st.markdown("""
+# 🤖 AI Data Analyst
 
-    st.caption("Powered by Gemini AI")
+### Powered by Gemini AI
+""")
 
     st.markdown("---")
 
     menu = st.radio(
         "Navigation",
-        (
-            "AI Chat",
-            "Dashboard",
-            "Visualizations",
-            "Data Cleaning",
-            "AI Insights",
-            "Report"
-        )
+        [
+            "🤖 AI Chat",
+            "📊 Dashboard",
+            "📈 Visualizations",
+            "🧹 Data Cleaning",
+            "💡 AI Insights",
+            "📄 Report"
+        ]
     )
 
     st.markdown("---")
@@ -70,75 +72,73 @@ with st.sidebar:
         type=["csv"]
     )
 
-    # Dataset Information
     if uploaded_file is not None:
 
         st.markdown("---")
 
-        st.subheader("Dataset")
+        st.subheader("📁 Dataset")
 
-        st.write(f"**Name:** {uploaded_file.name}")
+        st.write(uploaded_file.name)
 
-        size = uploaded_file.size / 1024
-
-        st.write(f"**Size:** {size:.2f} KB")
+        st.write(f"Size : {uploaded_file.size/1024:.2f} KB")
 
 
-# ==========================================
-# Main Title
-# ==========================================
+# =====================================================
+# Hero Section
+# =====================================================
 
 st.markdown("""
-<h1 style="
-font-size:60px;
-font-weight:800;
-color:#2F3E75;
-margin-bottom:10px;
-font-family:'Outfit',sans-serif;">
-AI Data Analyst Agent
+<h1 style="text-align:center;">
+🤖 AI Data Analyst Agent
 </h1>
 """, unsafe_allow_html=True)
 
 st.markdown("""
 <p style="
-font-size:24px;
-color:#5B6475;
-font-family:'Outfit',sans-serif;
-margin-bottom:30px;">
-Analyze datasets using AI-powered insights,
-interactive visualizations, automated data cleaning,
-and intelligent reporting.
+text-align:center;
+font-size:20px;
+margin-top:-10px;">
+Analyze • Visualize • Clean • Chat • Report
 </p>
 """, unsafe_allow_html=True)
-
-# =====================================================
-# No Dataset
-# =====================================================
-
-if uploaded_file is None:
-
-    st.info("Please upload a CSV dataset from the sidebar.")
-
-    st.stop()
-
-
-# =====================================================
-# Read Dataset
-# =====================================================
-
-df = pd.read_csv(uploaded_file)
-
-st.success("Dataset loaded successfully.")
 
 st.write("")
 
 # =====================================================
-# Navigation
+# Feature Cards
 # =====================================================
 
-if menu == "AI Chat":
+c1, c2, c3 = st.columns(3)
 
-    st.header("AI Chat")
+with c1:
+    st.info("📊 **Dashboard**\n\nView dataset statistics and KPIs.")
+
+with c2:
+    st.info("📈 **Visualizations**\n\nGenerate interactive charts.")
+
+with c3:
+    st.info("🧹 **Data Cleaning**\n\nHandle missing values and duplicates.")
+
+c4, c5, c6 = st.columns(3)
+
+with c4:
+    st.info("🤖 **AI Chat**\n\nAsk questions about your data.")
+
+with c5:
+    st.info("💡 **AI Insights**\n\nGenerate smart insights.")
+
+with c6:
+    st.info("📄 **PDF Report**\n\nDownload a professional report.")
+
+st.divider()
+
+# =====================================================
+# AI Chat (Available Before Upload)
+# =====================================================
+
+if menu == "🤖 AI Chat":
+
+    st.header("🤖 AI Data Analyst")
 
     question = st.text_area(
         "Ask a question",
@@ -146,63 +146,196 @@ if menu == "AI Chat":
         placeholder="Example: Which column has the highest missing values?"
     )
 
-    if st.button("Ask AI", use_container_width=True):
+    if uploaded_file is None:
 
-        if question.strip():
+        st.warning("Please upload a CSV dataset first to enable AI analysis.")
 
-            with st.spinner("Analyzing dataset..."):
+    else:
 
-                answer = ask_agent(question, df)
+        df = pd.read_csv(uploaded_file)
 
-            st.success("Analysis Completed")
+        if st.button("Ask AI", width="stretch"):
 
-            st.markdown(answer)
+            if question.strip():
 
-        else:
+                with st.spinner("Analyzing dataset..."):
 
-            st.warning("Please enter a question.")
+                    answer = ask_agent(question, df)
 
+                st.chat_message("user").write(question)
 
-elif menu == "Dashboard":
+                st.chat_message("assistant").write(answer)
+
+            else:
+
+                st.warning("Please enter a question.")
+
+# =====================================================
+# Stop if Dataset Not Uploaded
+# =====================================================
+
+if uploaded_file is None:
+
+    st.stop()
+
+# =====================================================
+# Load Dataset
+# =====================================================
+
+df = pd.read_csv(uploaded_file)
+
+st.success("✅ Dataset loaded successfully.")
+
+st.write("")
+# =====================================================
+# Navigation
+# =====================================================
+
+if menu == "📊 Dashboard":
+
+    st.header("📊 Dashboard")
 
     show_overview(df)
 
 
-elif menu == "Visualizations":
+# =====================================================
+# Visualizations
+# =====================================================
+
+elif menu == "📈 Visualizations":
+
+    st.header("📈 Interactive Visualizations")
+
+    st.write("Explore your dataset using interactive charts.")
 
     show_visualizations(df)
 
 
-elif menu == "Data Cleaning":
+# =====================================================
+# Data Cleaning
+# =====================================================
+
+elif menu == "🧹 Data Cleaning":
+
+    st.header("🧹 Data Cleaning")
+
+    st.write("Clean your dataset before analysis.")
 
     show_cleaning(df)
 
 
-elif menu == "AI Insights":
+# =====================================================
+# AI Insights
+# =====================================================
+
+elif menu == "💡 AI Insights":
+
+    st.header("💡 AI Insights")
+
+    st.write("Automatically generated insights from your dataset.")
 
     show_ai_insights(df)
 
 
-elif menu == "Report":
+# =====================================================
+# Report
+# =====================================================
 
-    st.header("AI Report")
+elif menu == "📄 Report":
 
-    st.write(
-        "Generate a professional PDF report with dataset statistics and AI-generated insights."
-    )
+    st.header("📄 AI Report Generator")
+
+    st.success("""
+Your report includes:
+
+✅ Dataset Summary
+
+✅ Missing Value Analysis
+
+✅ Statistical Summary
+
+✅ AI Generated Insights
+
+✅ Recommendations
+""")
 
     insights = generate_insights(df)
 
-    if st.button("Generate PDF Report", use_container_width=True):
+    if st.button("📄 Generate PDF Report", width="stretch"):
 
-        filename = generate_report(df, insights)
+        with st.spinner("Generating Report..."):
+
+            filename = generate_report(df, insights)
+
+        st.success("Report Generated Successfully!")
 
         with open(filename, "rb") as pdf:
 
             st.download_button(
-                label="Download PDF Report",
+                "⬇ Download PDF Report",
                 data=pdf,
                 file_name=filename,
                 mime="application/pdf",
-                use_container_width=True
+                width="stretch"
             )
+
+
+# =====================================================
+# Dataset Preview
+# =====================================================
+
+st.divider()
+
+st.subheader("📂 Dataset Preview")
+
+st.dataframe(
+    df.head(10),
+    width="stretch"
+)
+
+
+# =====================================================
+# Dataset Information
+# =====================================================
+
+st.subheader("📋 Dataset Information")
+
+c1, c2, c3, c4 = st.columns(4)
+
+with c1:
+    st.metric("Rows", len(df))
+
+with c2:
+    st.metric("Columns", len(df.columns))
+
+with c3:
+    st.metric("Missing Values", int(df.isnull().sum().sum()))
+
+with c4:
+    st.metric("Duplicates", int(df.duplicated().sum()))
+
+
+# =====================================================
+# Footer
+# =====================================================
+
+st.divider()
+
+st.markdown(
+"""
+<div style='text-align:center;'>
+
+<h3>🤖 AI Data Analyst Agent</h3>
+
+<p>
+Built with ❤️ by <b>Aswitha S</b>
+</p>
+
+<p>
+Powered by Streamlit • Gemini AI • Plotly • Pandas
+</p>
+
+</div>
+""",
+unsafe_allow_html=True
+)

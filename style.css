@@ -1,28 +1,23 @@
 /* =====================================================
    GOOGLE FONT
 ===================================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
-
-
-/* =====================================================
-   GLOBAL
-===================================================== */
 
 html,
 body,
 [data-testid="stAppViewContainer"],
-[data-testid="stSidebar"]{
-    font-family: 'Outfit', sans-serif;
-    background:#FCFCFF;
+[data-testid="stSidebar"] *{
+    font-family:'Outfit',sans-serif;
 }
 
 
 /* =====================================================
-   MAIN BACKGROUND
+   APP BACKGROUND
 ===================================================== */
 
 [data-testid="stAppViewContainer"]{
-    background:#FCFCFF;
+    background:#FAFBFF;
 }
 
 
@@ -32,69 +27,70 @@ body,
 
 [data-testid="stSidebar"]{
 
-    background:#EEF4FF;
+    background:#EEF5FF;
 
-    border-right:2px solid #D6E4FF;
-
-    padding-top:20px;
+    border-right:2px solid #D8E7FF;
 }
 
 
-/* Sidebar Title */
+/* Sidebar title */
 
 [data-testid="stSidebar"] h1{
 
-    font-size:34px !important;
+    font-size:28px !important;
 
-    font-weight:800 !important;
+    font-weight:700;
 
-    color:#274472;
+    color:#304674;
 }
 
 
-/* Sidebar Text */
+/* Sidebar labels */
 
-[data-testid="stSidebar"] p{
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] span{
 
     font-size:16px !important;
-
-    color:#555;
 }
 
 
 /* =====================================================
-   TITLES
+   MAIN TITLE
 ===================================================== */
 
 h1{
 
-    font-size:54px !important;
+    font-size:42px !important;
 
     font-weight:800 !important;
 
-    color:#284B63;
+    color:#2F4F75;
 
     margin-bottom:5px;
 }
 
 
+/* =====================================================
+   SUB HEADINGS
+===================================================== */
+
 h2{
 
-    font-size:34px !important;
+    font-size:30px !important;
 
-    font-weight:700 !important;
+    font-weight:700;
 
-    color:#355070;
+    color:#486284;
 }
-
 
 h3{
 
-    font-size:28px !important;
+    font-size:24px !important;
 
-    font-weight:600 !important;
+    font-weight:700;
 
-    color:#355070;
+    color:#486284;
 }
 
 
@@ -102,13 +98,66 @@ h3{
    NORMAL TEXT
 ===================================================== */
 
-p{
+p,
+label,
+span,
+li{
 
-    font-size:19px;
+    font-size:16px !important;
 
-    line-height:1.7;
+    color:#4A5568;
 
-    color:#4B5563;
+    line-height:1.6;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.stButton button{
+
+    width:100%;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#A8D8EA;
+
+    color:#234;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.stButton button:hover{
+
+    background:#91CCE2;
+
+    transform:translateY(-2px);
+}
+
+
+/* =====================================================
+   INPUT BOX
+===================================================== */
+
+.stTextInput input,
+.stTextArea textarea{
+
+    border-radius:12px;
+
+    border:1px solid #D8E3F3;
+
+    font-size:16px !important;
+
+    background:white;
 }
 
 
@@ -118,113 +167,33 @@ p{
 
 [data-testid="metric-container"]{
 
-    background:#F7F4FF;
+    background:#FFFFFF;
 
     border-radius:18px;
 
-    padding:20px;
+    border:1px solid #E8ECF8;
 
-    border:1px solid #E4D9FF;
+    padding:18px;
 
-    box-shadow:0px 6px 18px rgba(0,0,0,.08);
+    box-shadow:0 4px 14px rgba(0,0,0,.05);
 }
-
 
 [data-testid="metric-container"] label{
 
-    font-size:18px !important;
+    font-size:15px !important;
 
-    font-weight:600 !important;
+    color:#5B6475;
+
+    font-weight:600;
 }
-
 
 [data-testid="stMetricValue"]{
 
-    font-size:34px !important;
+    font-size:30px !important;
 
-    font-weight:800 !important;
+    color:#2F4F75;
 
-    color:#274472;
-}
-
-
-/* =====================================================
-   BUTTONS
-===================================================== */
-
-.stButton>button{
-
-    width:100%;
-
-    height:52px;
-
-    border-radius:12px;
-
-    border:none;
-
-    background:#CDEAC0;
-
-    color:#234;
-
-    font-size:18px;
-
-    font-weight:600;
-
-    transition:.3s;
-}
-
-
-.stButton>button:hover{
-
-    background:#B8E0D2;
-
-    color:#000;
-}
-
-
-/* =====================================================
-   TEXT INPUT
-===================================================== */
-
-.stTextInput input{
-
-    border-radius:12px;
-
-    font-size:18px;
-}
-
-
-.stTextArea textarea{
-
-    border-radius:12px;
-
-    font-size:18px;
-}
-
-
-/* =====================================================
-   FILE UPLOADER
-===================================================== */
-
-[data-testid="stFileUploader"]{
-
-    background:#FFFFFF;
-
-    border:2px dashed #C7D2FE;
-
-    border-radius:16px;
-
-    padding:15px;
-}
-
-
-/* Only style uploader button */
-
-[data-testid="stFileUploader"] button{
-
-    font-size:15px !important;
-
-    border-radius:10px !important;
+    font-weight:700;
 }
 
 
@@ -234,57 +203,64 @@ p{
 
 [data-testid="stDataFrame"]{
 
-    border-radius:15px;
+    border-radius:16px;
 
-    border:1px solid #E5E7EB;
+    overflow:hidden;
+
+    border:1px solid #E3E9F5;
 }
 
 
 /* =====================================================
-   RADIO BUTTONS
+   FILE UPLOADER
 ===================================================== */
 
-.stRadio{
+[data-testid="stFileUploader"]{
 
-    font-size:18px;
+    border-radius:15px;
+
+    background:white;
+
+    border:2px dashed #C8DAF5;
+
+    padding:18px;
 }
 
 
+/* =====================================================
+   RADIO BUTTON
+===================================================== */
+
 .stRadio label{
 
-    font-size:18px !important;
+    font-size:16px !important;
 
     font-weight:500;
 }
 
 
 /* =====================================================
-   SUCCESS
+   SUCCESS / INFO
 ===================================================== */
 
 .stSuccess{
 
-    border-radius:10px;
+    border-radius:12px;
 }
-
-
-/* =====================================================
-   INFO
-===================================================== */
 
 .stInfo{
 
-    border-radius:10px;
+    border-radius:12px;
 }
 
 
 /* =====================================================
-   DIVIDER
+   CHAT RESPONSE
 ===================================================== */
 
-hr{
+.stMarkdown{
 
-    border:1px solid #D6E4FF;
+    font-size:16px;
 }
 
 
@@ -294,19 +270,12 @@ hr{
 
 ::-webkit-scrollbar{
 
-    width:10px;
+    width:8px;
 }
-
 
 ::-webkit-scrollbar-thumb{
 
-    background:#C7D2FE;
+    background:#B8C8E8;
 
     border-radius:20px;
-}
-
-
-::-webkit-scrollbar-track{
-
-    background:#F8FAFC;
 }
