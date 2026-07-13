@@ -1,0 +1,312 @@
+/* =====================================================
+   GOOGLE FONT
+===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+html,
+body,
+[data-testid="stAppViewContainer"],
+[data-testid="stSidebar"]{
+    font-family: 'Outfit', sans-serif;
+    background:#FCFCFF;
+}
+
+
+/* =====================================================
+   MAIN BACKGROUND
+===================================================== */
+
+[data-testid="stAppViewContainer"]{
+    background:#FCFCFF;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+[data-testid="stSidebar"]{
+
+    background:#EEF4FF;
+
+    border-right:2px solid #D6E4FF;
+
+    padding-top:20px;
+}
+
+
+/* Sidebar Title */
+
+[data-testid="stSidebar"] h1{
+
+    font-size:34px !important;
+
+    font-weight:800 !important;
+
+    color:#274472;
+}
+
+
+/* Sidebar Text */
+
+[data-testid="stSidebar"] p{
+
+    font-size:16px !important;
+
+    color:#555;
+}
+
+
+/* =====================================================
+   TITLES
+===================================================== */
+
+h1{
+
+    font-size:54px !important;
+
+    font-weight:800 !important;
+
+    color:#284B63;
+
+    margin-bottom:5px;
+}
+
+
+h2{
+
+    font-size:34px !important;
+
+    font-weight:700 !important;
+
+    color:#355070;
+}
+
+
+h3{
+
+    font-size:28px !important;
+
+    font-weight:600 !important;
+
+    color:#355070;
+}
+
+
+/* =====================================================
+   NORMAL TEXT
+===================================================== */
+
+p{
+
+    font-size:19px;
+
+    line-height:1.7;
+
+    color:#4B5563;
+}
+
+
+/* =====================================================
+   METRIC CARDS
+===================================================== */
+
+[data-testid="metric-container"]{
+
+    background:#F7F4FF;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    border:1px solid #E4D9FF;
+
+    box-shadow:0px 6px 18px rgba(0,0,0,.08);
+}
+
+
+[data-testid="metric-container"] label{
+
+    font-size:18px !important;
+
+    font-weight:600 !important;
+}
+
+
+[data-testid="stMetricValue"]{
+
+    font-size:34px !important;
+
+    font-weight:800 !important;
+
+    color:#274472;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.stButton>button{
+
+    width:100%;
+
+    height:52px;
+
+    border-radius:12px;
+
+    border:none;
+
+    background:#CDEAC0;
+
+    color:#234;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+
+.stButton>button:hover{
+
+    background:#B8E0D2;
+
+    color:#000;
+}
+
+
+/* =====================================================
+   TEXT INPUT
+===================================================== */
+
+.stTextInput input{
+
+    border-radius:12px;
+
+    font-size:18px;
+}
+
+
+.stTextArea textarea{
+
+    border-radius:12px;
+
+    font-size:18px;
+}
+
+
+/* =====================================================
+   FILE UPLOADER
+===================================================== */
+
+[data-testid="stFileUploader"]{
+
+    background:#FFFFFF;
+
+    border:2px dashed #C7D2FE;
+
+    border-radius:16px;
+
+    padding:15px;
+}
+
+
+/* Only style uploader button */
+
+[data-testid="stFileUploader"] button{
+
+    font-size:15px !important;
+
+    border-radius:10px !important;
+}
+
+
+/* =====================================================
+   DATAFRAME
+===================================================== */
+
+[data-testid="stDataFrame"]{
+
+    border-radius:15px;
+
+    border:1px solid #E5E7EB;
+}
+
+
+/* =====================================================
+   RADIO BUTTONS
+===================================================== */
+
+.stRadio{
+
+    font-size:18px;
+}
+
+
+.stRadio label{
+
+    font-size:18px !important;
+
+    font-weight:500;
+}
+
+
+/* =====================================================
+   SUCCESS
+===================================================== */
+
+.stSuccess{
+
+    border-radius:10px;
+}
+
+
+/* =====================================================
+   INFO
+===================================================== */
+
+.stInfo{
+
+    border-radius:10px;
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+hr{
+
+    border:1px solid #D6E4FF;
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:#C7D2FE;
+
+    border-radius:20px;
+}
+
+
+::-webkit-scrollbar-track{
+
+    background:#F8FAFC;
+}
