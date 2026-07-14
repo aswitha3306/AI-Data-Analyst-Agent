@@ -333,3 +333,119 @@ a:hover{
 
     color:#214C92;
 }
+/* =====================================================
+   TEXT INPUTS
+===================================================== */
+
+.stTextInput input,
+.stTextArea textarea,
+textarea {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    border: 2px solid #cbd5e1 !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+    padding: 12px !important;
+}
+
+.stTextInput input::placeholder,
+.stTextArea textarea::placeholder,
+textarea::placeholder {
+    color: #64748b !important;
+}
+
+.stTextInput input:focus,
+.stTextArea textarea:focus,
+textarea:focus {
+    border-color: #4f46e5 !important;
+    box-shadow: 0 0 0 3px rgba(79,70,229,0.15) !important;
+}
+
+
+/* =====================================================
+   FILE UPLOADER
+===================================================== */
+
+[data-testid="stFileUploader"] {
+    background: #ffffff !important;
+    border: 2px dashed #93c5fd !important;
+    border-radius: 18px !important;
+    padding: 18px !important;
+}
+
+[data-testid="stFileUploader"] label,
+[data-testid="stFileUploader"] span,
+[data-testid="stFileUploader"] p {
+    color: #1e3a8a !important;
+    font-weight: 600;
+}
+
+[data-testid="stFileUploaderDropzone"] {
+    background: #ffffff !important;
+    border-radius: 16px !important;
+}
+
+
+/* =====================================================
+   RADIO BUTTONS
+===================================================== */
+
+.stRadio label {
+    color: #1e293b !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+}
+
+
+/* =====================================================
+   DATAFRAME
+===================================================== */
+
+[data-testid="stDataFrame"] {
+    border-radius: 16px !important;
+    border: 1px solid #dbeafe !important;
+    overflow: hidden;
+}
+
+[data-testid="stDataFrame"] table {
+    color: #111827 !important;
+    background: white !important;
+}
+
+
+/* =====================================================
+   SUCCESS / INFO / WARNING
+===================================================== */
+
+.stSuccess,
+.stInfo,
+.stWarning,
+.stError {
+    border-radius: 14px !important;
+}
+
+
+/* =====================================================
+   MARKDOWN
+===================================================== */
+
+.stMarkdown {
+    color: #334155 !important;
+}
+
+.stMarkdown p {
+    color: #334155 !important;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    visibility: hidden;
+}
+
+header {
+    background: transparent !important;
+}
