@@ -1,82 +1,77 @@
-/*=====================================================
-GOOGLE FONT
-=====================================================*/
+/* =====================================================
+   GOOGLE FONT
+===================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
-/*=====================================================
-GLOBAL
-=====================================================*/
+/* =====================================================
+   GLOBAL
+===================================================== */
 
 html,
 body,
-[class*="css"],
 [data-testid="stAppViewContainer"],
 [data-testid="stSidebar"]{
     font-family:'Outfit',sans-serif;
 }
 
 [data-testid="stAppViewContainer"]{
-    background:#F6F8FC;
+    background:#F7F9FC;
 }
 
-/*=====================================================
-SIDEBAR
-=====================================================*/
+/* =====================================================
+   SIDEBAR
+===================================================== */
 
 [data-testid="stSidebar"]{
-    background:#EEF4FF;
-    border-right:1px solid #DCE7F8;
+    background:#EDF4FF;
+    border-right:1px solid #D8E4FF;
 }
 
 [data-testid="stSidebar"] h1{
-    color:#2D4D88;
-    font-size:28px;
+    color:#234A84;
     font-weight:800;
+    font-size:34px;
 }
 
 [data-testid="stSidebar"] p,
 [data-testid="stSidebar"] span,
 [data-testid="stSidebar"] label{
-    font-size:15px;
+    color:#42526E !important;
 }
 
-/*=====================================================
-HEADINGS
-=====================================================*/
+/* =====================================================
+   HEADINGS
+===================================================== */
 
 h1{
-    color:#274C77 !important;
+    color:#214C92;
     font-size:46px !important;
     font-weight:800 !important;
 }
 
 h2{
-    color:#365486 !important;
-    font-size:32px !important;
-    font-weight:700 !important;
+    color:#295BA7;
+    font-weight:700;
 }
 
 h3{
-    color:#365486 !important;
-    font-size:25px !important;
-    font-weight:700 !important;
+    color:#295BA7;
 }
 
-/*=====================================================
-TEXT
-=====================================================*/
+/* =====================================================
+   TEXT
+===================================================== */
 
 p,
-label,
-span,
 li{
-    color:#4E5D6C;
-    font-size:16px;
+    color:#444;
+    font-size:17px;
+    line-height:1.6;
 }
 
-/*=====================================================
-BUTTONS
-=====================================================*/
+/* =====================================================
+   BUTTON
+===================================================== */
 
 .stButton>button{
 
@@ -88,212 +83,253 @@ BUTTONS
 
     border:none;
 
-    background:#5B8DEF;
+    background:#4F7EF7;
 
-    color:white;
+    color:white !important;
 
-    font-size:16px;
+    font-size:17px;
 
     font-weight:600;
 
-    transition:.3s;
+    transition:0.3s;
 }
 
 .stButton>button:hover{
 
-    background:#4478DD;
+    background:#356AF0;
+
+    color:white !important;
 
     transform:translateY(-2px);
-
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
-/*=====================================================
-INPUTS
-=====================================================*/
+/* =====================================================
+   INPUT BOXES
+===================================================== */
 
-.stTextInput input,
+/* Text Area */
+
 .stTextArea textarea{
 
-    border-radius:12px !important;
+    background:#FFFFFF !important;
 
-    border:1px solid #D7DDEA !important;
+    color:#000000 !important;
 
-    background:white !important;
-
-    padding:10px !important;
-}
-
-/*=====================================================
-SELECTBOX
-=====================================================*/
-
-.stSelectbox{
+    border:1px solid #D9E2F2 !important;
 
     border-radius:12px;
+
+    font-size:16px !important;
+
+    caret-color:black !important;
 }
 
-/*=====================================================
-RADIO
-=====================================================*/
+/* Placeholder */
 
-.stRadio label{
+.stTextArea textarea::placeholder{
 
-    font-size:16px;
-
-    font-weight:500;
+    color:#7A7A7A !important;
 }
 
-/*=====================================================
-FILE UPLOADER
-=====================================================*/
+/* Text Input */
 
-[data-testid="stFileUploader"]{
+.stTextInput input{
+
+    background:#FFFFFF !important;
+
+    color:#000000 !important;
+
+    border-radius:12px;
+
+    border:1px solid #D9E2F2 !important;
+
+    caret-color:black !important;
+}
+
+.stTextInput input::placeholder{
+
+    color:#888 !important;
+}
+
+/* =====================================================
+   SELECT BOX
+===================================================== */
+
+.stSelectbox div[data-baseweb="select"]{
 
     background:white;
 
-    border:2px dashed #BFD5FF;
-
-    border-radius:15px;
-
-    padding:18px;
+    color:black;
 }
 
-/*=====================================================
-METRICS
-=====================================================*/
+/* =====================================================
+   RADIO
+===================================================== */
+
+.stRadio label{
+
+    color:#3D4D67 !important;
+
+    font-size:16px;
+}
+
+/* =====================================================
+   FILE UPLOADER
+===================================================== */
+
+[data-testid="stFileUploader"]{
+
+    border:2px dashed #BFD6FF;
+
+    border-radius:16px;
+
+    padding:18px;
+
+    background:white;
+}
+
+/* =====================================================
+   METRICS
+===================================================== */
 
 [data-testid="metric-container"]{
 
     background:white;
 
-    border-radius:18px;
+    border-radius:16px;
 
     padding:18px;
 
-    border:1px solid #E4EAF5;
+    border:1px solid #E2E8F5;
 
-    box-shadow:0 4px 15px rgba(0,0,0,.05);
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
 }
 
 [data-testid="metric-container"] label{
 
-    color:#777;
+    color:#64748B;
 
     font-weight:600;
 }
 
 [data-testid="stMetricValue"]{
 
-    color:#305F9B;
+    color:#214C92;
 
     font-size:30px;
 
     font-weight:700;
 }
 
-/*=====================================================
-DATAFRAME
-=====================================================*/
+/* =====================================================
+   DATAFRAME
+===================================================== */
 
 [data-testid="stDataFrame"]{
 
     background:white;
 
-    border-radius:18px;
+    border-radius:16px;
 
-    border:1px solid #E3EAF5;
-
-    overflow:hidden;
+    border:1px solid #DDE7F5;
 }
 
-/*=====================================================
-INFO BOXES
-=====================================================*/
+/* =====================================================
+   INFO BOXES
+===================================================== */
 
 [data-testid="stAlert"]{
 
     border-radius:14px;
 }
 
-/*=====================================================
-CHAT
-=====================================================*/
+/* =====================================================
+   CHAT MESSAGE
+===================================================== */
 
 [data-testid="stChatMessage"]{
 
-    border-radius:15px;
+    border-radius:14px;
 
-    padding:15px;
-
-    margin-bottom:12px;
-
-    background:white;
-
-    border:1px solid #E6ECF8;
+    padding:12px;
 }
 
-/*=====================================================
-CARDS
-=====================================================*/
-
-div[data-testid="stVerticalBlock"]>div:has(.stInfo){
-
-    border-radius:18px;
-}
-
-.stInfo{
-
-    background:white !important;
-
-    border:1px solid #E5EAF4 !important;
-
-    border-radius:18px !important;
-
-    padding:18px !important;
-
-    box-shadow:0 4px 15px rgba(0,0,0,.05);
-}
-
-/*=====================================================
-SUCCESS
-=====================================================*/
+/* =====================================================
+   SUCCESS MESSAGE
+===================================================== */
 
 .stSuccess{
 
-    border-radius:15px;
+    border-radius:14px;
 }
 
-/*=====================================================
-DIVIDER
-=====================================================*/
-
-hr{
-
-    border:none;
-
-    height:1px;
-
-    background:#E3E8F3;
-}
-
-/*=====================================================
-SCROLLBAR
-=====================================================*/
+/* =====================================================
+   SCROLLBAR
+===================================================== */
 
 ::-webkit-scrollbar{
 
-    width:8px;
+    width:10px;
 }
 
 ::-webkit-scrollbar-thumb{
 
-    background:#A9B8D8;
+    background:#AFC6F7;
 
-    border-radius:10px;
+    border-radius:50px;
 }
 
 ::-webkit-scrollbar-track{
 
-    background:#EDF2FA;
+    background:#F4F6FA;
+}
+
+/* =====================================================
+   REMOVE RED OUTLINE
+===================================================== */
+
+textarea:focus,
+input:focus{
+
+    outline:none !important;
+
+    box-shadow:none !important;
+
+    border:1px solid #4F7EF7 !important;
+}
+
+/* =====================================================
+   EXPANDER
+===================================================== */
+
+.streamlit-expanderHeader{
+
+    font-weight:600;
+}
+
+/* =====================================================
+   DATAFRAME HEADER
+===================================================== */
+
+thead tr th{
+
+    background:#EEF4FF !important;
+
+    color:#234A84 !important;
+}
+
+/* =====================================================
+   LINKS
+===================================================== */
+
+a{
+
+    color:#356AF0;
+
+    text-decoration:none;
+}
+
+a:hover{
+
+    color:#214C92;
 }
