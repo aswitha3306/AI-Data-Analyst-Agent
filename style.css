@@ -1,133 +1,96 @@
-/* =====================================================
-   GOOGLE FONT
-===================================================== */
-
+/*=====================================================
+GOOGLE FONT
+=====================================================*/
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+/*=====================================================
+GLOBAL
+=====================================================*/
 
 html,
 body,
+[class*="css"],
 [data-testid="stAppViewContainer"],
-[data-testid="stSidebar"] *{
+[data-testid="stSidebar"]{
     font-family:'Outfit',sans-serif;
 }
 
-
-/* =====================================================
-   APP BACKGROUND
-===================================================== */
-
 [data-testid="stAppViewContainer"]{
-    background:#FAFBFF;
+    background:#F6F8FC;
 }
 
-
-/* =====================================================
-   SIDEBAR
-===================================================== */
+/*=====================================================
+SIDEBAR
+=====================================================*/
 
 [data-testid="stSidebar"]{
-
-    background:#EEF5FF;
-
-    border-right:2px solid #D8E7FF;
+    background:#EEF4FF;
+    border-right:1px solid #DCE7F8;
 }
-
-
-/* Sidebar title */
 
 [data-testid="stSidebar"] h1{
-
-    font-size:28px !important;
-
-    font-weight:700;
-
-    color:#304674;
+    color:#2D4D88;
+    font-size:28px;
+    font-weight:800;
 }
 
-
-/* Sidebar labels */
-
-[data-testid="stSidebar"] label,
 [data-testid="stSidebar"] p,
-[data-testid="stSidebar"] span{
-
-    font-size:16px !important;
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] label{
+    font-size:15px;
 }
 
-
-/* =====================================================
-   MAIN TITLE
-===================================================== */
+/*=====================================================
+HEADINGS
+=====================================================*/
 
 h1{
-
-    font-size:42px !important;
-
+    color:#274C77 !important;
+    font-size:46px !important;
     font-weight:800 !important;
-
-    color:#2F4F75;
-
-    margin-bottom:5px;
 }
 
-
-/* =====================================================
-   SUB HEADINGS
-===================================================== */
-
 h2{
-
-    font-size:30px !important;
-
-    font-weight:700;
-
-    color:#486284;
+    color:#365486 !important;
+    font-size:32px !important;
+    font-weight:700 !important;
 }
 
 h3{
-
-    font-size:24px !important;
-
-    font-weight:700;
-
-    color:#486284;
+    color:#365486 !important;
+    font-size:25px !important;
+    font-weight:700 !important;
 }
 
-
-/* =====================================================
-   NORMAL TEXT
-===================================================== */
+/*=====================================================
+TEXT
+=====================================================*/
 
 p,
 label,
 span,
 li{
-
-    font-size:16px !important;
-
-    color:#4A5568;
-
-    line-height:1.6;
+    color:#4E5D6C;
+    font-size:16px;
 }
 
+/*=====================================================
+BUTTONS
+=====================================================*/
 
-/* =====================================================
-   BUTTONS
-===================================================== */
-
-.stButton button{
+.stButton>button{
 
     width:100%;
 
     height:48px;
 
-    border:none;
-
     border-radius:12px;
 
-    background:#A8D8EA;
+    border:none;
 
-    color:#234;
+    background:#5B8DEF;
+
+    color:white;
 
     font-size:16px;
 
@@ -136,137 +99,187 @@ li{
     transition:.3s;
 }
 
-.stButton button:hover{
+.stButton>button:hover{
 
-    background:#91CCE2;
+    background:#4478DD;
 
     transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
-
-/* =====================================================
-   INPUT BOX
-===================================================== */
+/*=====================================================
+INPUTS
+=====================================================*/
 
 .stTextInput input,
 .stTextArea textarea{
 
-    border-radius:12px;
+    border-radius:12px !important;
 
-    border:1px solid #D8E3F3;
+    border:1px solid #D7DDEA !important;
 
-    font-size:16px !important;
+    background:white !important;
 
-    background:white;
+    padding:10px !important;
 }
 
+/*=====================================================
+SELECTBOX
+=====================================================*/
 
-/* =====================================================
-   METRIC CARDS
-===================================================== */
+.stSelectbox{
+
+    border-radius:12px;
+}
+
+/*=====================================================
+RADIO
+=====================================================*/
+
+.stRadio label{
+
+    font-size:16px;
+
+    font-weight:500;
+}
+
+/*=====================================================
+FILE UPLOADER
+=====================================================*/
+
+[data-testid="stFileUploader"]{
+
+    background:white;
+
+    border:2px dashed #BFD5FF;
+
+    border-radius:15px;
+
+    padding:18px;
+}
+
+/*=====================================================
+METRICS
+=====================================================*/
 
 [data-testid="metric-container"]{
 
-    background:#FFFFFF;
+    background:white;
 
     border-radius:18px;
 
-    border:1px solid #E8ECF8;
-
     padding:18px;
 
-    box-shadow:0 4px 14px rgba(0,0,0,.05);
+    border:1px solid #E4EAF5;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.05);
 }
 
 [data-testid="metric-container"] label{
 
-    font-size:15px !important;
-
-    color:#5B6475;
+    color:#777;
 
     font-weight:600;
 }
 
 [data-testid="stMetricValue"]{
 
-    font-size:30px !important;
+    color:#305F9B;
 
-    color:#2F4F75;
+    font-size:30px;
 
     font-weight:700;
 }
 
-
-/* =====================================================
-   DATAFRAME
-===================================================== */
+/*=====================================================
+DATAFRAME
+=====================================================*/
 
 [data-testid="stDataFrame"]{
 
-    border-radius:16px;
+    background:white;
+
+    border-radius:18px;
+
+    border:1px solid #E3EAF5;
 
     overflow:hidden;
-
-    border:1px solid #E3E9F5;
 }
 
+/*=====================================================
+INFO BOXES
+=====================================================*/
 
-/* =====================================================
-   FILE UPLOADER
-===================================================== */
+[data-testid="stAlert"]{
 
-[data-testid="stFileUploader"]{
+    border-radius:14px;
+}
+
+/*=====================================================
+CHAT
+=====================================================*/
+
+[data-testid="stChatMessage"]{
 
     border-radius:15px;
 
+    padding:15px;
+
+    margin-bottom:12px;
+
     background:white;
 
-    border:2px dashed #C8DAF5;
-
-    padding:18px;
+    border:1px solid #E6ECF8;
 }
 
+/*=====================================================
+CARDS
+=====================================================*/
 
-/* =====================================================
-   RADIO BUTTON
-===================================================== */
+div[data-testid="stVerticalBlock"]>div:has(.stInfo){
 
-.stRadio label{
-
-    font-size:16px !important;
-
-    font-weight:500;
-}
-
-
-/* =====================================================
-   SUCCESS / INFO
-===================================================== */
-
-.stSuccess{
-
-    border-radius:12px;
+    border-radius:18px;
 }
 
 .stInfo{
 
-    border-radius:12px;
+    background:white !important;
+
+    border:1px solid #E5EAF4 !important;
+
+    border-radius:18px !important;
+
+    padding:18px !important;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.05);
 }
 
+/*=====================================================
+SUCCESS
+=====================================================*/
 
-/* =====================================================
-   CHAT RESPONSE
-===================================================== */
+.stSuccess{
 
-.stMarkdown{
-
-    font-size:16px;
+    border-radius:15px;
 }
 
+/*=====================================================
+DIVIDER
+=====================================================*/
 
-/* =====================================================
-   SCROLLBAR
-===================================================== */
+hr{
+
+    border:none;
+
+    height:1px;
+
+    background:#E3E8F3;
+}
+
+/*=====================================================
+SCROLLBAR
+=====================================================*/
 
 ::-webkit-scrollbar{
 
@@ -275,7 +288,12 @@ li{
 
 ::-webkit-scrollbar-thumb{
 
-    background:#B8C8E8;
+    background:#A9B8D8;
 
-    border-radius:20px;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-track{
+
+    background:#EDF2FA;
 }
